@@ -1,6 +1,9 @@
 <h1 align="center">
   PriceCheck
 </h1>
+
+
+<img width="200" src="https://raw.githubusercontent.com/ludmylaalmeida/PriceCheckApp/main/app/src/main/res/drawable/logo.png" >
 <p><b>Goal:</b> The goal for this app is to provide an option for people who are under a budget. They can find the best price and how much they will pay for their grocery list.</p>
 
 <p><b>Competition:</b> There are currently no apps in the market that provide this functionality.</p>
@@ -9,8 +12,7 @@
 <li>Solution Approach:</b> I choose to develop this app with Java since I'm familiar with the language.</li>
 <li>I did not have any experience with building an app with a database and based on the simplicity of Firebase, I choose the app's data there.</li>
 <li>Design-wise I followed the Material Design standards.</li>
-
-<img width="200" src="https://raw.githubusercontent.com/ludmylaalmeida/PriceCheckApp/main/app/src/main/res/drawable/logo.png" >
+</ol>
 
 <h2>Screen Capture</h2>
 <img width="300" src="https://raw.githubusercontent.com/ludmylaalmeida/PriceCheckApp/main/screen-1.png" >
