@@ -1,4 +1,4 @@
-h1 align="center">
+<h1 align="center">
   PriceCheck
 </h1>
 <p align="center">The goal for this programming project is to create a simple 2D predator-prey simulation. In this
