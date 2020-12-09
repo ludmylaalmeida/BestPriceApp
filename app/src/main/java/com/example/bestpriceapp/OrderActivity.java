@@ -65,16 +65,14 @@ public class OrderActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        totalQuantity = (TextView) findViewById(R.id.totalQuantity);
-        totalQuantity.setText(String.valueOf(orderTotalQuantity));
-
         findBestPrice = (MaterialButton) findViewById(R.id.findBestPriceBtn);
         findBestPrice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Intent intent = new Intent(OrderActivity.this, FindBestPriceActivity.class);
-                intent.putExtra("Total Price", String.valueOf(orderTotalPrice));
+                intent.putExtra("Total Price", String.valueOf(orderTotalPrice).format("%.2f", orderTotalPrice));
+                intent.putExtra("Quantity", String.valueOf(orderTotalQuantity));
                 startActivity(intent);
                 finish();
             }
@@ -113,9 +111,6 @@ public class OrderActivity extends AppCompatActivity {
         final DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child("Cart List");
         FirebaseRecyclerOptions<Cart> options = new FirebaseRecyclerOptions.Builder<Cart>().setQuery(cartListRef.child("User View")
                 .child(Prevalent.currentOnlineUser.getPhone()).child("Products"), Cart.class).build();
-
-//        itemsNumber.setText(cartListRef.child("User View").child(Prevalent.currentOnlineUser.getPhone()).child("Products").getKey().length());
-
 
         FirebaseRecyclerAdapter<Cart, CartViewHolder> adapter = new FirebaseRecyclerAdapter<Cart, CartViewHolder>(options) {
             @Override
