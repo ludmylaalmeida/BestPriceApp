@@ -1,1 +1,1 @@
-# BestPriceApp
+# PriceCheckApp
