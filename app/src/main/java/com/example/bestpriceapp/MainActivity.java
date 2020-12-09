@@ -23,35 +23,43 @@ import io.paperdb.Paper;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button joinNowButton, loginButton, continueGuest;
+    private Button joinNowButton, goTologinButton, continueGuest;
     private ProgressDialog loadingBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        try
+        {
+            this.getSupportActionBar().hide();
+        }
+        catch (NullPointerException e){}
+
         setContentView(R.layout.activity_main);
-
-        joinNowButton = (Button) findViewById(R.id.joinNowButton);
-        loginButton = (Button) findViewById(R.id.loginButton);
-        continueGuest = (Button) findViewById(R.id.continueGuest);
-
-        loadingBar = new ProgressDialog(this);
 
         Paper.init(this);
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(intent);
-            }
-        });
+        joinNowButton = (Button) findViewById(R.id.joinNowButton);
+        goTologinButton = (Button) findViewById(R.id.goToLoginActivity);
+//         TODO
+//        continueGuest = (Button) findViewById(R.id.continueGuest);
+
+        loadingBar = new ProgressDialog(this);
 
         joinNowButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
-                startActivity(intent);
+                Intent intent2 = new Intent(MainActivity.this, RegisterActivity.class);
+                startActivity(intent2);
+            }
+        });
+
+        goTologinButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent1);
             }
         });
 
@@ -94,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
                             loadingBar.dismiss();
 
                             Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                            Prevalent.currentOnlineUser = usersData;
                             startActivity(intent);
 
                         } else {

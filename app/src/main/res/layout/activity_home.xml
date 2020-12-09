@@ -1,18 +1,211 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:theme="@android:style/Theme.Black.NoTitleBar"
     tools:context=".HomeActivity">
 
+    <TextView
+        android:id="@+id/welcomeUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="132dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/nunito"
+        android:text="@string/placeholder"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+<!--    <androidx.appcompat.widget.AppCompatImageView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="20dp"-->
+<!--        android:src="@drawable/ic_waving_hand"-->
+<!--        android:layout_toRightOf="@+id/welcomeUser"-->
+<!--        android:layout_marginTop="50dp"-->
+<!--        android:layout_marginStart="5dp">-->
+
+<!--    </androidx.appcompat.widget.AppCompatImageView>-->
+
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="266dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginEnd="132dp"
+        android:layout_below="@+id/welcomeUser"
+        android:fontFamily="@font/nunito"
+        android:text="@string/home_title1"
+        android:textAlignment="textStart"
+        android:textColor="@color/grey"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"/>
+
+
+    <Button
+        android:id="@+id/createGrocerieListBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_rounded"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:text="@string/button_home"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_below="@+id/text3"/>
+
+    <TextView
+        android:id="@+id/storesNear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/nunitobold"
+        android:layout_marginTop="20dp"
+        android:text="@string/stores_list"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/black"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_below="@+id/createGrocerieListBtn"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/marketBasketBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/storesNear"
+        android:layout_marginStart="16dp"
+        android:visibility="visible"
+        app:cardBackgroundColor="#fff"
+        android:clickable="true"
+        android:focusable="true"
+        android:checkable="true">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/market_basket" />
+        </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/wegmans"
+        android:layout_below="@+id/storesNear"
+        android:layout_toRightOf="@+id/marketBasketBtn"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:visibility="visible"
+        app:cardBackgroundColor="#fff">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/wegmans" />
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/stopandshop"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:layout_marginStart="16dp"
+        android:layout_below="@+id/marketBasketBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:visibility="visible"
+        app:cardBackgroundColor="#fff">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/stop_shop" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/shawns"
+        android:layout_toRightOf="@+id/stopandshop"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:layout_marginStart="16dp"
+        android:layout_below="@+id/wegmans"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:visibility="visible"
+        app:cardBackgroundColor="#fff">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/shawns" />
+        </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/americas"
+        android:layout_below="@+id/stopandshop"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:layout_marginStart="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:visibility="visible"
+        app:cardBackgroundColor="#fff">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/americas_market" />
+        </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/starmarket"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/stopandshop"
+        android:layout_toRightOf="@+id/americas"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:layout_marginStart="16dp"
+            android:layout_height="80dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/star_market" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/shoppingCartHome"
+        android:src="@drawable/ic_cart"
+        app:rippleColor="@color/white"
+        app:tint="@color/white"
+        app:fabSize="normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:backgroundTint="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="80dp"
+        android:layout_marginEnd="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        />
+
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
+        android:id="@+id/bottom_navigation_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_navigation_menu"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-16dp" />
+        app:labelVisibilityMode="labeled"
+        android:layout_alignParentBottom="true"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

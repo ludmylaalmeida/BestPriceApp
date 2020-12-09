@@ -31,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     private ProgressDialog loadingBar;
 
     private String parentDbName = "Users";
+    Prevalent prevalent = new Prevalent();
 
     //work on remember me checkbox
     private CheckBox checkBoxRememberMe;
@@ -38,6 +39,13 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        try
+        {
+            this.getSupportActionBar().hide();
+        }
+        catch (NullPointerException e){}
+
         setContentView(R.layout.activity_login);
 
         LoginButton = (Button) findViewById(R.id.loginButton);
@@ -108,6 +116,7 @@ public class LoginActivity extends AppCompatActivity {
                             loadingBar.dismiss();
 
                             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                            prevalent.currentOnlineUser = usersData;
                             startActivity(intent);
 
                         } else {

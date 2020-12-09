@@ -11,7 +11,7 @@
     <string name="title_home">Home</string>
     <string name="title_zipcode">Welcome</string>
     <string name="title_groceries">Groceries</string>
-    <string name="title_orders">Orders</string>
+    <string name="title_orders">Cart</string>
     <string name="title_account">Account</string>
 
     <string name="produce">Produce</string>
@@ -24,9 +24,7 @@
     <string name="popular">Popular items</string>
 
     <string name="button_home">Create your grocery list</string>
-    <string name="home_title1">Get the</string>
-    <string name="home_title2">best price</string>
-    <string name="home_title3">for your groceries.</string>
+    <string name="home_title1">Find the best price for your groceries.</string>
     <string name="stores_list">Stores near you</string>
     <string name="market_basket">Market Basket</string>
     <string name="wegmans">Wegmans</string>
@@ -45,4 +43,32 @@
     <string name="stores_near">Find stores near you.</string>
     <string name="continue_btn">Continue</string>
     <string name="enter_zip_code">Enter your zip code</string>
+
+    <string name="find_best_price">Find the best price</string>
+
+
+    <!--    System words-->
+    <string name="password">Password</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="email">Email</string>
+    <string name="user_first_name">First Name</string>
+    <string name="user_last_name">Last Name</string>
+
+    <string name="create_account">Getting Started</string>
+    <string name="create_account_btn">Create Account</string>
+    <string name="login">Login</string>
+    <string name="Logout">Logout</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="guest">Continue as guest</string>
+    <string name="have_account">Login</string>
+    <string name="join">Create an Account</string>
+
+    <string name="logo">logo</string>
+
+    <string name="placeholder">placeholder</string>
+    <string name="your_name">Your name</string>
+    <string name="change_image">Change image</string>
+
+
 </resources>

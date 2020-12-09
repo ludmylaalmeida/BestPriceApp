@@ -25,16 +25,24 @@ import java.util.HashMap;
 public class RegisterActivity extends AppCompatActivity {
 
     private Button CreateAccountButton;
-    private EditText InputName, InputEmail, InputPhoneNumber, InputPassword;
+    private EditText InputFirstName, InputLastName, InputEmail, InputPhoneNumber, InputPassword;
     private ProgressDialog loadingBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        try
+        {
+            this.getSupportActionBar().hide();
+        }
+        catch (NullPointerException e){}
+
         setContentView(R.layout.activity_register);
 
         CreateAccountButton = (Button) findViewById(R.id.createAccountButton);
-        InputName = (EditText) findViewById(R.id.registerUsername);
+        InputFirstName = (EditText) findViewById(R.id.registerFirstName);
+        InputLastName = (EditText) findViewById(R.id.registerLastName);
         InputPhoneNumber = (EditText) findViewById(R.id.registerPhoneNumber);
         InputEmail= (EditText) findViewById(R.id.registerEmail);
         InputPassword = (EditText) findViewById(R.id.registerPasswordInput);
@@ -43,19 +51,25 @@ public class RegisterActivity extends AppCompatActivity {
         CreateAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 CreateAccount();
             }
         });
     }
 
     private void CreateAccount() {
-        String name = InputName.getText().toString();
+        String firstName = InputFirstName.getText().toString();
+        String lastName = InputLastName.getText().toString();
         String email = InputEmail.getText().toString();
         String phone = InputPhoneNumber.getText().toString();
         String password= InputPassword.getText().toString();
 
-        if (TextUtils.isEmpty(name)){
-            Toast.makeText(this, "Please write your name...", Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(firstName)){
+            Toast.makeText(this, "Please write your first name...", Toast.LENGTH_SHORT).show();
+        }
+
+        if (TextUtils.isEmpty(lastName)){
+            Toast.makeText(this, "Please write your last name...", Toast.LENGTH_SHORT).show();
         }
 
         if (TextUtils.isEmpty(email)){
@@ -76,11 +90,11 @@ public class RegisterActivity extends AppCompatActivity {
             loadingBar.setCanceledOnTouchOutside(false);
             loadingBar.show();
 
-            ValidatePhoneNumber(name, email, phone, password);
+            ValidatePhoneNumber(firstName, lastName, email, phone, password);
         }
     }
 
-    private void ValidatePhoneNumber(String name, String email, String phone, String password) {
+    private void ValidatePhoneNumber(String firstName, String lastName, String email, String phone, String password) {
 
         final DatabaseReference RootRef;
         RootRef = FirebaseDatabase.getInstance().getReference();
@@ -95,7 +109,9 @@ public class RegisterActivity extends AppCompatActivity {
                     userDataMap.put("phone", phone);
                     userDataMap.put("email", email);
                     userDataMap.put("password", password);
-                    userDataMap.put("name", name);
+                    userDataMap.put("firstName", firstName);
+                    userDataMap.put("lastName", lastName);
+
 
                     RootRef.child("Users").child(phone).updateChildren(userDataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override

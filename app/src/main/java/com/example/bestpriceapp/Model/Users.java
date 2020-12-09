@@ -3,25 +3,34 @@ package com.example.bestpriceapp.Model;
 public class Users {
 
     // need to get user info
-    private String name, email, phone, password;
+    private String firstName, lastName, email, phone, password;
 
     public Users() {
 
     }
 
-    public Users(String name, String email, String phone, String password) {
-        this.name = name;
+    public Users(String firstName, String lastName, String email, String phone, String password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.phone = phone;
         this.password = password;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {

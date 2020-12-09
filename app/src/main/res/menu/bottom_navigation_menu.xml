@@ -4,18 +4,19 @@
         android:id="@+id/home_nav"
         android:enabled="true"
         android:icon="@drawable/ic_home"
-        android:title="@string/title_home"/>
+        android:title="@string/title_home" />
     <item
         android:id="@+id/groceries_nav"
         android:enabled="true"
         android:icon="@drawable/ic_groceries"
         android:title="@string/title_groceries"/>
 
-<!--    <item-->
-<!--        android:id="@+id/home_nav"-->
-<!--        android:enabled="true"-->
-<!--        android:icon="@drawable/ic_home"-->
-<!--        android:title="@string/title_home"/>-->
+    <item
+        android:id="@+id/orders_nav"
+        android:enabled="true"
+        android:icon="@drawable/ic_list"
+        android:title="@string/title_orders"/>
+
     <item
         android:id="@+id/account_nav"
         android:enabled="true"

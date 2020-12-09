@@ -10,83 +10,136 @@
         android:id="@+id/registerAppLogo"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:src="@drawable/logo" />
+        android:src="@drawable/logo"
+        android:contentDescription="@string/logo"
+        android:layout_marginStart="20dp"/>
 
     <TextView
         android:id="@+id/textCreateAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Create your account"
+        android:text="@string/create_account"
         android:layout_below="@+id/registerAppLogo"
         android:textSize="21sp"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold"
         android:layout_marginTop="30dp"
-        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
         />
 
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutRegisterFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:startIconDrawable="@drawable/user"
+        android:layout_marginTop="20dp"
+        android:hint="@string/user_first_name"
+        android:layout_below="@id/textCreateAccount">
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/registerUsername"
+        android:id="@+id/registerFirstName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:hint="Name"
+        android:backgroundTint="@color/white"
         android:inputType="textPersonName"
-        android:layout_marginTop="40dp"
         android:padding="20dp"
         android:textColor="@color/colorPrimary"
         android:textColorHint="@color/colorPrimary"
-        android:textSize="17sp"
-        android:layout_below="@id/textCreateAccount"></com.google.android.material.textfield.TextInputEditText>
+        android:textSize="17sp"></com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutRegisterLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:startIconDrawable="@drawable/user"
+        android:hint="@string/user_last_name"
+        android:layout_below="@id/layoutRegisterFirstName">
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/registerLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/white"
+        android:inputType="textPersonName"
+        android:padding="20dp"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimary"
+        android:textSize="17sp"></com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutRegisterEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:startIconDrawable="@drawable/mail"
+        android:hint="@string/email"
+        android:layout_below="@id/layoutRegisterLastName">
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/registerEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:hint="Email"
+        android:backgroundTint="@color/white"
         android:inputType="textEmailAddress"
         android:layout_marginTop="10dp"
         android:padding="20dp"
         android:textColor="@color/colorPrimary"
         android:textColorHint="@color/colorPrimary"
-        android:textSize="17sp"
-        android:layout_below="@id/registerUsername"></com.google.android.material.textfield.TextInputEditText>
+        android:textSize="17sp"></com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutRegisterPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:startIconDrawable="@drawable/phone"
+        android:hint="@string/phone_number"
+        android:layout_below="@+id/layoutRegisterEmail">
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/registerPhoneNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:hint="Phone Number"
+        android:backgroundTint="@color/white"
         android:inputType="number"
         android:layout_marginTop="10dp"
         android:padding="20dp"
         android:textColor="@color/colorPrimary"
         android:textColorHint="@color/colorPrimary"
-        android:textSize="17sp"
-        android:layout_below="@id/registerEmail"></com.google.android.material.textfield.TextInputEditText>
+        android:textSize="17sp"></com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
 
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutRegisterPasswordInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:startIconDrawable="@drawable/lock"
+        android:layout_below="@id/layoutRegisterPhoneNumber"
+        android:hint="@string/password">
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/registerPasswordInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:hint="Password"
         android:inputType="textPassword"
+        android:backgroundTint="@color/white"
         android:padding="20dp"
         android:layout_marginTop="10dp"
         android:textColor="@color/colorPrimary"
         android:textColorHint="@color/colorPrimary"
-        android:textSize="17sp"
-        android:layout_below="@id/registerPhoneNumber" />
+        android:textSize="17sp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 
     <com.google.android.material.button.MaterialButton
@@ -94,13 +147,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="50dp"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:padding="20dp"
         android:textAllCaps="false"
-        android:textSize="18dp"
-        android:text="Create Account"
+        android:textSize="18sp"
+        android:text="@string/create_account_btn"
         />
 
 </RelativeLayout>
