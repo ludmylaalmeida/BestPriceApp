@@ -27,7 +27,7 @@
 <li>Click Run.</li>
 </ol>
 
-<p>Dependencies : Firebase, AndroidFx, MaterialUi, 
+<p>Dependencies : Firebase, AndroidFx, Material Design, 
 <a href="https://github.com/hdodenhof/CircleImageView" target="_blank">Circle Image View</a> and
 <a href="https://github.com/ashik94vc/ElegantNumberButton" target="_blank">Elegant number button</a></p>
 
